@@ -4,7 +4,7 @@ name: Update readme # GitHub Actions 탭에서 확인할 수 있는 액션 이�
 
 on: # jobs가 실행되어야 하는 상황 정의
   push:
-    branches: [ "main" ] # main 브랜치에 push가 발생했을 때
+    branches: [ "main" ]
   pull_request:
 
 jobs: # 실제 실행될 내용
@@ -15,7 +15,7 @@ jobs: # 실제 실행될 내용
     - name: Set up Python 3.10 
       uses: actions/setup-python@v3 # setup-python
       with:
-        python-version: "3.10" # 3.10버전 파이썬 사용
+        python-version: "3.10"
     - name: Install dependencies # 1) 스크립트에 필요한 dependency 설치
       run: |
         python -m pip install --upgrade pip
@@ -25,10 +25,10 @@ jobs: # 실제 실행될 내용
         python update.py
     - name: Commit changes # 3) 추가된 파일 commit
       run: |
-        git config --global user.name iimmuunnee 
-        git config --global user.email glgmsl@naver.com 
+        git config --global user.name iimmuunnee
+        git config --global user.email glgmsl@naver.com
         git add -A
-        git commit -am "auto update README.md" # 커밋 메시지
+        git commit -am "auto update README.md"
     - name: Push changes # 4) 메인에 푸시
       run: |
         git push
