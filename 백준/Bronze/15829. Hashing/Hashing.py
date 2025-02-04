@@ -9,7 +9,9 @@ hash_str = sys.stdin.readline()
 alphabet_map = {chr(i): i - 96 for i in range(97, 123)}
 
 result = 0
+power = 1
 for s in range(l):
-  result += alphabet_map[hash_str[s]] * 31**s % M
+  result += alphabet_map[hash_str[s]] * power
+  power = (power * r)
 
-sys.stdout.write(str(result))
+sys.stdout.write(str(result % M))
