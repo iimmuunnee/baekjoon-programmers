@@ -5,8 +5,8 @@ def solution(want, number, discount):
     for i in range(discount_day - want_n + 1):
         dis_list = discount[i:i+want_n]
         dis_bool = True
-        for i, v in enumerate(want):
-            if number[i] != dis_list.count(v):
+        for j, v in enumerate(want):
+            if number[j] != dis_list.count(v):
                 dis_bool = False
                 break
         if dis_bool:
